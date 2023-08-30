@@ -1,0 +1,96 @@
+.App { 
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(to right, #2F80ED , #B2FFDA);
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  h1, h2, h3 {
+    font-weight: 700;
+  }
+  
+  p {
+    font-weight: 400;
+  }
+  
+  .light-text {
+    font-weight: 300;
+  }
+  .temp-value{
+  
+    font-family: 'Bebas Neue', sans-serif;
+  }
+  .forecast-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .forecast-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 0;
+  }
+  .forecast-list img {
+    width: 40px;
+    height: 40px;
+  }
+  .temp-chart {
+    background-color: rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    padding: 50px;
+    border-radius: 20px;
+    width: 100%;
+    height: auto;
+  }
+  
+  @media only screen and (max-width: 720px) {
+    .temp-chart {
+      margin: 0;
+      padding: 40px 30px;
+      width: 100%;
+    }
+  }
+  
+  @media only screen and (max-width: 560px) {
+    .temp-chart {
+      padding: 40px 30px;
+      width: 100%;
+    }
+  }
+  .icon-container, .value-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .cardeffects {
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #ebedee;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  .cardeffects:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .cardeffects a, .cardeffects button {
+    transition: all 0.3s;
+  }
+  
+  .cardeffects a:hover, .cardeffects button:hover {
+    transform: scale(1.05);
+  }
+  
+  
+  
+  
+  
+  
