@@ -4,7 +4,7 @@ import { API_KEY, API_URL } from './constants';
 import Currentweather from './currentweather';
 import WeatherData from './WeatherData';
 import Forecast from './Forecast';
-import TempChart from './TempChart';
+//import TempChart from './TempChart';
 
 const App = () => {
   const [query, setQuery] = useState('leeds');
@@ -89,51 +89,51 @@ const App = () => {
         </div>
 
       </header>
-
-      {currentWeather && (
-
-        <div className="row mt-3">
-          <div className="col-lg-6 col-md-12 p-1">
-            <div className="card rounded p-1 mb-2" style={{ backgroundColor: 'transparent' }}>
-              <div className="card-body">
-                <div className="row mb-4">
-                  <Currentweather currentWeather={currentWeather} dateToWords={dateToWords} />
-                  <WeatherData weatherData={currentWeather} /> 
-                </div>
-                <div className="row">
-                  <div className="col">
-                    <div className="card rounded p-3 cardeffects">
-                      <div className="card-body cardeffects">
-                        {forecastData.length > 0 && (
-                          <div className="col-12 p-3">
-                            <h2>Forecast</h2>
-                            <Forecast forecastData={forecastData} />
-                          </div>
-                        )}
+      {Array.from({ length: 10 }, (_, i) => i).map(i => (
+  currentWeather && (
+    <div className="row mt-3" key={i}>
+      <div className="col-lg-6 col-md-12 p-1">
+        <div className="card rounded p-1 mb-2" style={{ backgroundColor: 'transparent' }}>
+          <div className="card-body">
+            <div className="row mb-4">
+              <Currentweather currentWeather={currentWeather} dateToWords={dateToWords} />
+              <WeatherData weatherData={currentWeather} /> 
+            </div>
+            <div className="row">
+              <div className="col">
+                <div className="card rounded p-3 cardeffects">
+                  <div className="card-body cardeffects">
+                    {forecastData.length > 0 && (
+                      <div className="col-12 p-3">
+                        <h2>Forecast</h2>
+                        <Forecast forecastData={forecastData} />
                       </div>
-                    </div>
+                    )}
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
-          <div className="col-lg-6 col-md-12 p-1">
-            <div className="row">
-              <div className="col-12 mb-2">
-              <TempChart tempsData={nineTemps} width={200} height={50} />
-              </div>
-              <div className="col-12">
-                <img
-                  src={isDaytime ? "https://images.wallpaperscraft.com/image/single/clouds_sky_day_172438_1280x720.jpg" : "https://images.hdqwalls.com/download/mountains-night-sky-1280x720.jpg"}
-                  alt={isDaytime ? "Daytime Landscape" : "Nighttime Landscape"}
-                  style={{ width: '100%', height: 'auto', borderRadius: '20px' }}
-                />
-              </div>
-            </div>
+        </div>
+      </div>
+      <div className="col-lg-6 col-md-12 p-1">
+        <div className="row">
+          <div className="col-12 mb-2">
+            {/* <TempChart tempsData={nineTemps} width={200} height={50} /> */}
+          </div>
+          <div className="col-12">
+            <img
+              src={isDaytime ? "https://images.wallpaperscraft.com/image/single/clouds_sky_day_172438_1280x720.jpg" : "https://images.hdqwalls.com/download/mountains-night-sky-1280x720.jpg"}
+              alt={isDaytime ? "Daytime Landscape" : "Nighttime Landscape"}
+              style={{ width: '100%', height: 'auto', borderRadius: '20px' }}
+            />
           </div>
         </div>
-      )}
+      </div>
+    </div>
+  )
+))}
+
       <footer className="mt-3 pt-3 text-center">
         <p style={{ color: '#FFFFFF' }}>
           © 2023 Weather App. All rights reserved. Designed and built by Bilal Ahmad Khan with React, Bootstrap, CSS, Chart.js, and WeatherAPI.
