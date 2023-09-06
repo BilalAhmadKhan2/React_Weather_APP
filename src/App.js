@@ -4,7 +4,7 @@ import { API_KEY, API_URL } from './constants';
 import Currentweather from './currentweather';
 import WeatherData from './WeatherData';
 import Forecast from './Forecast';
-//import TempChart from './TempChart';
+import TempChart from './TempChart';
 
 const App = () => {
   const [query, setQuery] = useState('leeds');
@@ -89,9 +89,8 @@ const App = () => {
         </div>
 
       </header>
-      {Array.from({ length: 10 }, (_, i) => i).map(i => (
-  currentWeather && (
-    <div className="row mt-3" key={i}>
+    {currentWeather && (
+    <div className="row mt-3">
       <div className="col-lg-6 col-md-12 p-1">
         <div className="card rounded p-1 mb-2" style={{ backgroundColor: 'transparent' }}>
           <div className="card-body">
@@ -119,7 +118,7 @@ const App = () => {
       <div className="col-lg-6 col-md-12 p-1">
         <div className="row">
           <div className="col-12 mb-2">
-            {/* <TempChart tempsData={nineTemps} width={200} height={50} /> */}
+            <TempChart tempsData={nineTemps} width={200} height={50} />
           </div>
           <div className="col-12">
             <img
@@ -132,7 +131,7 @@ const App = () => {
       </div>
     </div>
   )
-))}
+}
 
       <footer className="mt-3 pt-3 text-center">
         <p style={{ color: '#FFFFFF' }}>
